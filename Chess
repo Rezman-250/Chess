@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chess Club Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffc107;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        #interactive-character {
+            width: 100px;
+            margin: 50px auto;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #interactive-character img {
+            width: 100%;
+            max-width: 150px;
+        }
+
+        #interactive-character:hover {
+            transform: scale(1.2);
+        }
+
+        .speech-bubble {
+            display: none;
+            background-color: #ffc107;
+            border-radius: 10px;
+            padding: 10px;
+            position: absolute;
+            width: 200px;
+            top: 50px;
+            left: calc(50% - 100px);
+            text-align: center;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .speech-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: calc(50% - 10px);
+            border-width: 10px;
+            border-style: solid;
+            border-color: #ffc107 transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kings and Queens Junior Chess Club Machakos</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="interactive-character">
+    <img src="king-piece.png" alt="Interactive King"> <!-- Replace with your chess piece image -->
+    <div class="speech-bubble">Welcome to our Chess Club!</div>
+</section>
+
+<script>
+    const character = document.getElementById('interactive-character');
+    const speechBubble = character.querySelector('.speech-bubble');
+
+    character.addEventListener('click', () => {
+        speechBubble.style.display = speechBubble.style.display === 'none' ? 'block' : 'none';
+    });
+</script>
+
+</body>
+</html>
